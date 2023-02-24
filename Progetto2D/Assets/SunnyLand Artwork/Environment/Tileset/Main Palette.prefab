@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6221895104025639518}
   - component: {fileID: 6225678721109729185}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Main Palette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &7148368389071647544
+--- !u!114 &4580772999050090809
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
