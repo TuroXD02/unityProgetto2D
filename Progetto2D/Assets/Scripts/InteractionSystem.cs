@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractionSystem : MonoBehaviour
 {
@@ -8,8 +9,16 @@ public class InteractionSystem : MonoBehaviour
     public Transform detectionPoint;
     const float detectionRadius = 0.3f;
     public LayerMask detectionLayer;
-    //cached trigegr object
     public GameObject detectedObject;
+
+    [Header("Examine")]
+    public GameObject examineWindow;
+    public Image examineImage;
+    public Text examineText;
+    public bool isExamining = false;
+
+    [Header("Others")]
+    public List<GameObject> pickedItems = new List<GameObject>();
 
     void Update()
     {
@@ -20,6 +29,12 @@ public class InteractionSystem : MonoBehaviour
                 detectedObject.GetComponent<Item>().Interact();
             }
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(detectionPoint.position, detectionRadius);
     }
 
     bool InteractInput()
@@ -43,10 +58,25 @@ public class InteractionSystem : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected()
+    public void PickUpItem(GameObject item)
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(detectionPoint.position, detectionRadius);
+        pickedItems.Add(item);
+    }
+
+    public void ExamineItem(Item item)
+    {
+        if(isExamining)
+        {
+            examineWindow.SetActive(false);
+            isExamining = false;     
+        }
+        else
+        {
+            examineImage.sprite = item.GetComponent<SpriteRenderer>().sprite;
+            examineText.text = item.descriptionText;
+            examineWindow.SetActive(true);
+            isExamining = true;
+        }
     }
 
 }

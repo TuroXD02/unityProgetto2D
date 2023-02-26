@@ -29,7 +29,6 @@ public class Player : MonoBehaviour
     bool crouch = false;
     bool facingRight = true;
 
-
     void Awake()
     {
         availableJumps = jumps;
@@ -39,6 +38,9 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (!CanMove())
+            return; 
+
         horizontalValue = Input.GetAxisRaw("Horizontal");
 
         //animator
@@ -165,4 +167,13 @@ public class Player : MonoBehaviour
         Gizmos.DrawSphere(groundCheckCollider.position, groudCheckRadius);
         Gizmos.DrawSphere(overheadCheckCollider.position, overheadCheckRadius);
     }
+
+    bool CanMove()
+    {
+        bool can = true;
+        if(FindObjectOfType<InteractionSystem>().isExamining)
+            can = false;
+        return can; 
+    }
+
 }
