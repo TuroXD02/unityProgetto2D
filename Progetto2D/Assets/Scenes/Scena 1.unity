@@ -902,15 +902,7 @@ MonoBehaviour:
   items: []
   isOpen: 0
   ui_Window: {fileID: 77827413}
-  items_images:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  items_images: []
   ui_Description_Window: {fileID: 315226216}
   description_Image: {fileID: 599110419}
   description_Title: {fileID: 343986142}
