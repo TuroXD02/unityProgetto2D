@@ -1031,7 +1031,6 @@ GameObject:
   - component: {fileID: 634132472}
   - component: {fileID: 634132471}
   - component: {fileID: 634132470}
-  - component: {fileID: 634132469}
   m_Layer: 7
   m_Name: frocio
   m_TagString: Untagged
@@ -1053,23 +1052,6 @@ Transform:
   m_Father: {fileID: 2139682683}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &634132469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 634132467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20c329304a1326c4a9fe1412da026336, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  descriptionText: 
-  customEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &634132470
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1281,7 +1263,6 @@ GameObject:
   - component: {fileID: 834715988}
   - component: {fileID: 834715987}
   - component: {fileID: 834715986}
-  - component: {fileID: 834715985}
   m_Layer: 7
   m_Name: lyone testao
   m_TagString: Untagged
@@ -1303,23 +1284,6 @@ Transform:
   m_Father: {fileID: 2139682683}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &834715985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 834715983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20c329304a1326c4a9fe1412da026336, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  descriptionText: 
-  customEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &834715986
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2111,7 +2075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c329304a1326c4a9fe1412da026336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   descriptionText: 
   customEvent:
     m_PersistentCalls:

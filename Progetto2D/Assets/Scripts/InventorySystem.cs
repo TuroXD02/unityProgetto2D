@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class InventorySystem : MonoBehaviour
 {
+    [Header("General Fields")]
     public List<GameObject> items = new List<GameObject>();
     public bool isOpen;
 
@@ -44,7 +45,7 @@ public class InventorySystem : MonoBehaviour
         //mostra ogni item nella rispettiva casella
         for (int i = 0; i<items.Count;i++)
         {
-            Debug.Log(items_images);            
+                        
             items_images[i].sprite = items[i].GetComponent<SpriteRenderer>().sprite;
             items_images[i].gameObject.SetActive(true);
         }
