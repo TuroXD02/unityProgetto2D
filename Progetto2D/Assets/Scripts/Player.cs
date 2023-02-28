@@ -173,6 +173,8 @@ public class Player : MonoBehaviour
         bool can = true;
         if(FindObjectOfType<InteractionSystem>().isExamining)
             can = false;
+        if (FindObjectOfType<InventorySystem>().isOpen)
+            can= false;
         return can; 
     }
 

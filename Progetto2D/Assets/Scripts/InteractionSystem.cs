@@ -17,8 +17,7 @@ public class InteractionSystem : MonoBehaviour
     public Text examineText;
     public bool isExamining = false;
 
-    [Header("Others")]
-    public List<GameObject> pickedItems = new List<GameObject>();
+
 
     void Update()
     {
@@ -58,10 +57,6 @@ public class InteractionSystem : MonoBehaviour
         }
     }
 
-    public void PickUpItem(GameObject item)
-    {
-        pickedItems.Add(item);
-    }
 
     public void ExamineItem(Item item)
     {
