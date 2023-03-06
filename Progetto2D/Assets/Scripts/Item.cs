@@ -7,22 +7,31 @@ using UnityEngine.Events;
 public class Item : MonoBehaviour
 {
     public enum InteractionType { NONE, PickUp, Examine}
-    public InteractionType type;
+    public enum ItemType { Static, Consumable }
+
+    [Header("Attribute")]
+    public ItemType type;    
+    public InteractionType interactType;
 
     [Header("Examine")]
     public string descriptionText;
+
+    [Header("Custom event")]
     public UnityEvent customEvent;
+    public UnityEvent consumeEvent;
+
 
     void Reset()
     {
         //spunta Is Trigger e assegna layer Item
         GetComponent<Collider2D>().isTrigger = true;
         gameObject.layer = 7;
+        GetComponent<Transform>().position = new Vector3(0,0,1);
     }
 
     public void Interact()
     {
-        switch(type)
+        switch(interactType)
         {
             case InteractionType.PickUp:
                 FindObjectOfType<InventorySystem>().PickUp(gameObject); //aggiungi alla lista

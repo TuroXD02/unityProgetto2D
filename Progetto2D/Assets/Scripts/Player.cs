@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /* AGGIUNGERE ANIMAZIONE SALTO 0 velocity da animator */
+/* dio cane fare che si frizza l'er tempo mente examini */
 
 public class Player : MonoBehaviour
 {
@@ -34,6 +35,11 @@ public class Player : MonoBehaviour
         availableJumps = jumps;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+    }
+
+    void Start()
+    {
+        AudioManager.instance.PlayMusic("ZioPeppe");        //MUSICA DA CAMBIARE NON VA INIZIALIZZATA QUI
     }
 
     void Update()
