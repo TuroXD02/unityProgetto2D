@@ -17,7 +17,7 @@ public class Healthbar : MonoBehaviour
         if(health <= 0)
         {
             Debug.Log("RICCHIONE !!");
-            LoseLife();
+            /*LoseLife();*/
         }
     }
 

@@ -11,11 +11,11 @@ public class LifeCount : MonoBehaviour
 
     public void LoseLife()
     {
-        if (livesRemaning == 3)
+        if (livesRemaning == 0)
             return;
         livesRemaning--;
         lives[livesRemaning].enabled = false;
-        if (livesRemaning == 3)
+        if (livesRemaning == 0)
         {
             Debug.Log("HAI FINITO LE VITE, FROCIO !");
         }
