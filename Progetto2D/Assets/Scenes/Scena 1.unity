@@ -835,7 +835,6 @@ GameObject:
   - component: {fileID: 353927873}
   - component: {fileID: 353927874}
   - component: {fileID: 353927875}
-  - component: {fileID: 353927877}
   - component: {fileID: 353927876}
   m_Layer: 0
   m_Name: Player
@@ -1046,8 +1045,8 @@ MonoBehaviour:
   - {fileID: 843107975}
   - {fileID: 1114659695}
   - {fileID: 1243485494}
+  - {fileID: 1243485494}
   - {fileID: 949167080}
-  - {fileID: 2118802537}
   - {fileID: 1143936333}
   - {fileID: 1616672751}
   - {fileID: 37961746}
@@ -1072,18 +1071,6 @@ MonoBehaviour:
   - {fileID: 17593025}
   - {fileID: 1104953497}
   livesRemaning: 3
---- !u!114 &353927877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353927866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7749a51265a668438ba05367010989c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   fillBar: {fileID: 568035070}
   health: 100
 --- !u!1 &414970457
@@ -1432,19 +1419,7 @@ MonoBehaviour:
       m_Calls: []
   consumeEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 834715983}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!212 &634132472
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1843,7 +1818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c329304a1326c4a9fe1412da026336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
+  type: 0
   interactType: 2
   descriptionText: Lyone ha mandato a puttane la failcraft
   customEvent:
@@ -3159,7 +3134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  interactType: 1
+  interactType: 0
   descriptionText: 
   customEvent:
     m_PersistentCalls:
@@ -3809,7 +3784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c329304a1326c4a9fe1412da026336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
+  type: 0
   interactType: 2
   descriptionText: guarda che ricchione
   customEvent:
@@ -4330,7 +4305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  interactType: 2
+  interactType: 0
   descriptionText: Frocio!
   customEvent:
     m_PersistentCalls:
