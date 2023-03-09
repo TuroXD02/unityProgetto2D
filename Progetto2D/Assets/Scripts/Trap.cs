@@ -13,6 +13,7 @@ public class Trap : MonoBehaviour
         if (collision.tag == "Player")
         {
             Debug.Log("Dio Sardo");
+            FindObjectOfType<HealthSystem>().LoseHealth(25);
         }
     }
 }
