@@ -830,15 +830,15 @@ GameObject:
   - component: {fileID: 353927868}
   - component: {fileID: 353927867}
   - component: {fileID: 353927871}
+  - component: {fileID: 353927873}
   - component: {fileID: 353927870}
   - component: {fileID: 353927872}
-  - component: {fileID: 353927873}
   - component: {fileID: 353927874}
   - component: {fileID: 353927875}
   - component: {fileID: 353927876}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -945,6 +945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingCollider: {fileID: 353927871}
+  crouchingCollider: {fileID: 353927873}
   groundCheckCollider: {fileID: 7225698}
   overheadCheckCollider: {fileID: 296420608}
   groundLayer:
@@ -4109,6 +4110,7 @@ GameObject:
   - component: {fileID: 1629573315}
   - component: {fileID: 1629573314}
   - component: {fileID: 1629573316}
+  - component: {fileID: 1629573319}
   m_Layer: 0
   m_Name: Suino
   m_TagString: Untagged
@@ -4259,6 +4261,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1629573319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629573312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9931f3409f8dc4b8411bea1f593476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1700031653
 GameObject:
   m_ObjectHideFlags: 0

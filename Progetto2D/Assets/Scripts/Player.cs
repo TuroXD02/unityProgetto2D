@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 
     Rigidbody2D rb;
     Animator animator;
-    [SerializeField]Collider2D standingCollider;
+    [SerializeField]Collider2D standingCollider, crouchingCollider;
     [SerializeField]Transform groundCheckCollider;
     [SerializeField]Transform overheadCheckCollider;
     [SerializeField]LayerMask groundLayer;
@@ -82,6 +82,7 @@ public class Player : MonoBehaviour
         
         animator.SetBool("Crouch", crouchFlag);
         standingCollider.enabled = !crouchFlag;
+        crouchingCollider.enabled = crouchFlag;
         #endregion        
 
         #region movimento
