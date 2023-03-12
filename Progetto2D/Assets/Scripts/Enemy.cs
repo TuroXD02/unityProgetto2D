@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] int damageDealt;
     public List<Transform> points;
     public int nextID = 0;
     int idChangeValue = 1;
@@ -25,7 +26,7 @@ public class Enemy : MonoBehaviour
 
         GetComponent<BoxCollider2D>().isTrigger = true;
         //creazione root nemico
-        GameObject root = new GameObject(name + "_Root");
+        GameObject root = new GameObject("Enemy_" + name);
         root.transform.position = transform.position;
         transform.SetParent(root.transform);
         //creazione root waypoints
@@ -59,6 +60,14 @@ public class Enemy : MonoBehaviour
             if (nextID == 0)
                 idChangeValue = 1;
             nextID += idChangeValue;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            FindObjectOfType<HealthSystem>().LoseHealth(damageDealt);
         }
     }
 
