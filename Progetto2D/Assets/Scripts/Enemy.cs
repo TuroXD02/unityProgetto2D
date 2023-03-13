@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(ShootingAction))]
 public class Enemy : MonoBehaviour
 {
     [SerializeField] int damageDealt;

@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(ShootingAction))]
 public class Trap : MonoBehaviour
 {
     [SerializeField] int damageDealt;
