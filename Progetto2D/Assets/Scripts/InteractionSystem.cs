@@ -67,6 +67,7 @@ public class InteractionSystem : MonoBehaviour
         }
         else
         {
+            FindObjectOfType<Player>().StopPlayer();
             examineImage.sprite = item.GetComponent<SpriteRenderer>().sprite;
             examineText.text = item.descriptionText;
             examineWindow.SetActive(true);

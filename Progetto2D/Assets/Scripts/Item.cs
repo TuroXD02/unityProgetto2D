@@ -38,7 +38,7 @@ public class Item : MonoBehaviour
                 gameObject.SetActive(false);    
                 break;
             case InteractionType.Examine:
-                FindObjectOfType<InteractionSystem>().ExamineItem(this); 
+                FindObjectOfType<InteractionSystem>().ExamineItem(this);
                 break;
             default:
                 Debug.Log("NULL");

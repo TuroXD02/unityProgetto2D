@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
         else if (Input.GetButtonUp("Crouch"))
             crouch = false;
 
-        //velocità per animazione salto
+        //velocitï¿½ per animazione salto
         animator.SetFloat("yVelocity", rb.velocity.y);
     }
 
@@ -192,7 +192,10 @@ public class Player : MonoBehaviour
         FindAnyObjectByType<LevelManager>().Restart();
     }
 
-
+    public void StopPlayer()
+    {
+        horizontalValue = 0f;
+    }
 
 }
 
