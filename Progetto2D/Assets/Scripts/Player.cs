@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     bool isGrounded = false;
     bool crouch = false;
     bool facingRight = true;
+    bool isDead;
 
     void Awake()
     {
@@ -185,4 +186,13 @@ public class Player : MonoBehaviour
         return can; 
     }
 
+    public void Die()
+    {
+        rb.velocity = new Vector2(0, 0);
+        FindAnyObjectByType<LevelManager>().Restart();
+    }
+
+
+
 }
+

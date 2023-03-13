@@ -3,6 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Trap : MonoBehaviour
 {
+    [SerializeField] int damageDealt;
+
     void Reset()
     {
         GetComponent<BoxCollider2D>().isTrigger = true;
@@ -12,8 +14,7 @@ public class Trap : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Dio Sardo");
-            FindObjectOfType<HealthSystem>().LoseHealth(25);
+            FindObjectOfType<HealthSystem>().LoseHealth(damageDealt);
         }
     }
 }

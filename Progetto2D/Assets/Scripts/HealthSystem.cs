@@ -22,7 +22,7 @@ public class HealthSystem : MonoBehaviour
         lives[livesRemaning].enabled = false;
         if (livesRemaning == 0)
         {
-            Debug.Log("HAI FINITO LE VITE, FROCIO !");
+            FindAnyObjectByType<Player>().Die();
         }
     }
 
@@ -34,18 +34,12 @@ public class HealthSystem : MonoBehaviour
         fillBar.fillAmount = health / 100;
         if (health <= 0)
         {
-            Debug.Log("RICCHIONE !!");
+            Debug.Log("Frocio !!");
             LoseLife();
             health = 100;
             fillBar.fillAmount = health;
         }
 
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Return))
-            LoseHealth(25);
     }
 
 }
