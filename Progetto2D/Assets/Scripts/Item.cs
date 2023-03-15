@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Item : MonoBehaviour
 {
-    public enum InteractionType { NONE, PickUp, Examine}
+    public enum InteractionType { NONE, PickUp, Examine, Drag}
     public enum ItemType { Static, Consumable }
 
     [Header("Attribute")]
@@ -39,6 +39,9 @@ public class Item : MonoBehaviour
                 break;
             case InteractionType.Examine:
                 FindObjectOfType<InteractionSystem>().ExamineItem(this);
+                break;
+            case InteractionType.Drag:
+                FindObjectOfType<InteractionSystem>().Drag();
                 break;
             default:
                 Debug.Log("NULL");

@@ -122,9 +122,21 @@ public class Player : MonoBehaviour
                 availableJumps = jumps;
                 multipleJumps= false;
             }
+         
+            //se su moving platform, rendi parent--------
+            foreach(var c in colliders)
+            {
+                if (c.tag == "MovingPlatform")
+                    transform.parent= c.transform;
+            }
+            //----------------
         }
         else
         {
+            
+            //unparent moving platform
+            transform.parent = null;
+            //--------
             if(wasGrounded)
                 StartCoroutine(CoyoteJumpDelay());
 

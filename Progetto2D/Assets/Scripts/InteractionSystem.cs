@@ -17,6 +17,12 @@ public class InteractionSystem : MonoBehaviour
     public Text examineText;
     public bool isExamining = false;
 
+    [Header("Drag")]
+    bool isGrabbing = false;
+    GameObject grabbedObject;
+    public Transform grabPoint;
+    float grabbedObjectYValue;
+
 
 
     void Update()
@@ -25,6 +31,11 @@ public class InteractionSystem : MonoBehaviour
         {
             if (InteractInput())
             {
+                if (isGrabbing)
+                {
+                    Drag();
+                    return;
+                }
                 detectedObject.GetComponent<Item>().Interact();
             }
         }
@@ -43,6 +54,7 @@ public class InteractionSystem : MonoBehaviour
 
     bool DetectObject()
     {
+
         Collider2D obj = Physics2D.OverlapCircle(detectionPoint.position, detectionRadius, detectionLayer);
         if (obj == null)
         {
@@ -72,6 +84,27 @@ public class InteractionSystem : MonoBehaviour
             examineText.text = item.descriptionText;
             examineWindow.SetActive(true);
             isExamining = true;
+        }
+    }
+
+    public void Drag()
+    {
+        if(isGrabbing)
+        {
+            isGrabbing = false;
+            grabbedObject.transform.parent = null;
+            grabbedObject.transform.position =
+                new Vector3(grabbedObject.transform.position.x, grabbedObjectYValue, grabbedObject.transform.position.z);
+            grabbedObject= null;
+        }
+        else
+        {
+            isGrabbing = true;
+            grabbedObject = detectedObject;
+            grabbedObject.transform.parent = FindAnyObjectByType<Player>().transform;
+            grabbedObjectYValue = grabbedObject.transform.position.y;
+            grabbedObject.transform.localPosition = grabPoint.localPosition;
+
         }
     }
 
