@@ -12,6 +12,7 @@ public class Item : MonoBehaviour
     [Header("Attribute")]
     public ItemType type;    
     public InteractionType interactType;
+    public bool stackable = false;
 
     [Header("Examine")]
     public string descriptionText;
@@ -34,6 +35,8 @@ public class Item : MonoBehaviour
         switch(interactType)
         {
             case InteractionType.PickUp:
+                if(!FindObjectOfType<InventorySystem>().CanPickUp())
+                    return;
                 FindObjectOfType<InventorySystem>().PickUp(gameObject); //aggiungi alla lista
                 gameObject.SetActive(false);    
                 break;
