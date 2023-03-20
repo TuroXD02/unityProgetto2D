@@ -209,5 +209,11 @@ public class Player : MonoBehaviour
         horizontalValue = 0f;
     }
 
+    public Vector3 PlayerPosition()
+    {
+        Vector3 position = rb.GetComponent<Transform>().position;
+        return position;
+    }
+
 }
 

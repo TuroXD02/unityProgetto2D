@@ -93,19 +93,21 @@ public class InteractionSystem : MonoBehaviour
         {
             isGrabbing = false;
             grabbedObject.transform.parent = null;
-            grabbedObject.transform.position =
-                new Vector3(grabbedObject.transform.position.x, grabbedObjectYValue, grabbedObject.transform.position.z);
-            grabbedObject= null;
+            Vector3 PlayerPosition = GetComponent<Player>().PlayerPosition();
+            grabbedObject.transform.position = PlayerPosition;
+            grabbedObject = null;
         }
         else
         {
             isGrabbing = true;
             grabbedObject = detectedObject;
             grabbedObject.transform.parent = FindAnyObjectByType<Player>().transform;
-            grabbedObjectYValue = grabbedObject.transform.position.y;
+            //grabbedObjectYValue = grabbedObject.transform.position.y;
             grabbedObject.transform.localPosition = grabPoint.localPosition;
 
         }
     }
+
+
 
 }
